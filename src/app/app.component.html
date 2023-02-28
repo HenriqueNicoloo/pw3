@@ -1,0 +1,13 @@
+  <h1>
+    Olá, {{nomeCompleto()}}! Você tem {{idade}} anos.
+  </h1>
+
+  <img src= "{{logo}}">
+  <br>
+  <img [src]="logo">
+  <br>
+  <button (click)="obterAlerta()"> Exibir msg</button>
+
+  <p [hidden]="ocultar">Hoje é terça-feira</p>
+  <button (click)="obterMsg()"> Mostrar texto</button>
+
