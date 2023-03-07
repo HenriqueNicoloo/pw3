@@ -1,13 +1,6 @@
-  <h1>
-    Olá, {{nomeCompleto()}}! Você tem {{idade}} anos.
-  </h1>
-
-  <img src= "{{logo}}">
+  <img src= "{{biscoitoInteiro}}" [hidden]="!ocultar" alt="">
   <br>
-  <img [src]="logo">
+<img [src]="biscoitoQuebrado" [hidden]="ocultar" alt="">
   <br>
-  <button (click)="obterAlerta()"> Exibir msg</button>
-
-  <p [hidden]="ocultar">Hoje é terça-feira</p>
-  <button (click)="obterMsg()"> Mostrar texto</button>
-
+  <button [disabled] = "!ocultar" (click)="ocultarMensagem()"> Quebrar biscoito</button>
+  <p [hidden] = "ocultar">{{sortearFrases()}}</p>
