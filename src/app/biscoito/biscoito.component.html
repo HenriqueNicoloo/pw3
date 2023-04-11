@@ -1,0 +1,5 @@
+<img src={{biscoitoAtual}} alt="">
+<br>
+<button (click)="quebrarBiscoito()" [disabled]="desativar">Quebrar</button>
+
+<app-frases [hidden]="!desativar"></app-frases>

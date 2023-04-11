@@ -1,6 +1,34 @@
-  <img src= "{{biscoitoInteiro}}" [hidden]="!ocultar" alt="">
-  <br>
-<img [src]="biscoitoQuebrado" [hidden]="ocultar" alt="">
-  <br>
-  <button [disabled] = "!ocultar" (click)="ocultarMensagem()"> Quebrar biscoito</button>
-  <p [hidden] = "ocultar">{{sortearFrases()}}</p>
+<button (click)="order = 1">Individual</button>
+<button (click)="order = 2">Casal</button>
+<button (click)="order = 3">Família</button>
+<button (click)="order = 4">Amigos</button>
+
+<div [ngSwitch]="order">
+  <div *ngSwitchCase="1">
+    <p>Preço: 5,00</p>
+    <br>
+    <app-biscoito></app-biscoito>
+  </div>
+  <div *ngSwitchCase="2">
+    <p>Preço: 8,00</p>
+    <br>
+    <app-biscoito></app-biscoito><br>
+    <app-biscoito></app-biscoito>
+  </div>
+  <div *ngSwitchCase="3">
+    <p>Preço: 10,00</p>
+    <br>
+    <app-biscoito></app-biscoito><br>
+    <app-biscoito></app-biscoito><br>
+    <app-biscoito></app-biscoito>
+  </div>
+  <div *ngSwitchCase="4">
+    <p>Preço: 12,00</p>
+    <br>
+    <app-biscoito></app-biscoito><br>
+    <app-biscoito></app-biscoito><br>
+    <app-biscoito></app-biscoito><br>
+    <app-biscoito></app-biscoito>
+  </div>
+  <div *ngSwitchDefault></div>
+</div>

@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-frases',
+  templateUrl: './frases.component.html',
+  styleUrls: ['./frases.component.css']
 })
-export class AppComponent {
-  title = 'pw3-introducao'
-  order = 0;
+export class FrasesComponent {
 
-  /*mensagem = [
+  mensagens = "";
+
+  getFrase(){
+  let mensagem = [
     "Por que quando fechamos os dois olhos vemos preto, mas se fecharmos um só não vemos nada?",
     "Você não tem medo de estar sozinho em um quarto escuro, você tem medo de não estar sozinho",
     "Alguém ainda lembra de algo que você disse de anos atrás que você já se esqueceu completamente",
@@ -21,15 +22,8 @@ export class AppComponent {
     "Não sabemos qual a mentira que mais deu certo no mundo porque até hoje acreditamos nela",
     "Quatro é a metade de oito, mas três é a metade certa de oito"
   ];
+  let aleatorio = () => Math.floor(Math.random() * (mensagem.length));
 
-  ocultar = true;
-
-  ocultarMensagem(){
-    this.ocultar = false;
-  }
-
-  sortearFrases(){
-    return this.mensagem[Math.floor(Math.random() * this.mensagem.length)];
-  }*/
-}
-
+  this.mensagens = mensagem[aleatorio()];
+  return this.mensagens;
+}}
